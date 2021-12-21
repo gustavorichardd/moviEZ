@@ -1,0 +1,86 @@
+.checkoutContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+
+  .userProfile {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .idAndPhone {
+      input:first-child {
+        margin-right: 20px;
+      }
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .adress {
+      input:first-child {
+        width: 100px;
+        margin-right: 20px;
+      }
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .adressDetail {
+      input:first-child {
+        margin-right: 20px;
+      }
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input {
+      width: 100%;
+      margin: 10px 0;
+      height: 30px;
+      border: 1px solid #c5ced6;
+      border-radius: 5px;
+      font-size: 20px;
+    }
+
+    input::-webkit-input-placeholder {
+      vertical-align: middle;
+      color: #c5ced6;
+      font-size: 20px;
+    }
+
+    strong {
+      width: 100%;
+      text-align: left;
+      font-size: 1.6rem;
+      font-family: "Roboto", sans-serif;
+    }
+  }
+
+  .itensReview {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    th {
+      width: 100px;
+    }
+
+    td {
+      text-align: center;
+    }
+  }
+}

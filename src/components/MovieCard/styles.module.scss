@@ -1,0 +1,117 @@
+.movieCardContainer {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  width: 250px;
+  height: 330px;
+
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px 50px 10px;
+
+  border: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+.favoriteIcon {
+  top: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+.movieCardImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // margin-top: -22px;
+  img {
+    width: 250px;
+    height: 200px;
+  }
+  p {
+    margin-top: -25px;
+    font-family: "Roboto";
+    color: #fff;
+  }
+}
+
+.movieCardDescription {
+  display: flex;
+  width: 90%;
+  height: auto;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+
+  strong {
+    font-family: "Roboto";
+    font-size: 1rem;
+  }
+
+  .movieCardDescriptionDetail {
+    width: 300px;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+      margin: 0;
+    }
+
+    .movieCardDescriptionDetailScore {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      strong {
+        margin-left: 5px;
+        color: var(--secondary-color);
+      }
+    }
+  }
+
+  .movieCardValue {
+    p {
+      margin: 0;
+    }
+  }
+}
+.addCartButton {
+  width: 100%;
+  padding: 10px 0;
+  background: var(--secondary-color);
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 1rem;
+}
+
+.addCartButton:hover {
+  opacity: 0.95;
+  background: #f1cc35;
+}
+
+@media (max-width: 600px) {
+  .movieCardContainer {
+    width: 350px;
+    height: 400px;
+  }
+
+  .movieCardImage {
+    img {
+      width: 350px;
+      height: 280px;
+    }
+  }
+
+  .movieCardValue {
+    p {
+      margin: 10px 0;
+    }
+  }
+}

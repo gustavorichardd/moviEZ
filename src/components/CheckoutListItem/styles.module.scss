@@ -1,0 +1,44 @@
+.checkoutListItemContainer {
+  width: 95%;
+
+  .checkoutListItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    img:hover {
+      position: absolute;
+      width: 300px;
+      height: 250px;
+    }
+    strong:first-child {
+      margin-right: 5px;
+    }
+    p {
+      margin-right: 10px;
+    }
+
+    button {
+      border: none;
+      position: relative;
+      display: inline-block;
+    }
+
+    button[title]:hover:after {
+      content: "REMOVER DA SACOLA";
+      position: absolute;
+      top: 30px;
+      right: 10px;
+      width: 160px;
+      padding: 5px;
+      color: #fff;
+      background: #000;
+    }
+  }
+}

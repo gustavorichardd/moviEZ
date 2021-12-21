@@ -1,0 +1,21 @@
+:root {
+  --primary-color: #2572ba;
+  --secondary-color: #e3be28;
+  --title-color: #495057;
+  --text-side-color: rgba(255,255,255,.5);
+  --button-color-primary: #6558F5;
+
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  width: 100vw;
+  height: 100%;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}

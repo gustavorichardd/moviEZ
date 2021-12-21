@@ -1,0 +1,116 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+}
+.homeContent {
+  max-width: 1100px;
+  margin: 100px 0 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.shoppingListMenuHidden {
+  position: fixed;
+  right: -100%;
+  transition: 100ms;
+}
+
+.shoppingListMenuActive {
+  background: #f1f1f1;
+  border-left: 1px solid var(--primary-color);
+  width: 400px;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 3.5rem;
+  right: 0;
+  transition: 500ms;
+  z-index: 2;
+}
+
+.shoppingListMenu {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  justify-content: space-between;
+  padding: 0;
+
+  .shoppingListMenuItens {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .shoppingListMenuItensHeader {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+      width: 90%;
+      a {
+        color: blue;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .totalCheckOutList {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .moveToCheckout {
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 1.2rem;
+    background: var(--secondary-color);
+  }
+}
+
+@media (max-width: 1100px) {
+  .homeContent {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .homeContent {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .homeContent {
+    // display: flex;
+    // flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+
+  .shoppingListMenuActive {
+    background: #f1f1f1;
+    border-left: 1px solid #fff;
+    width: 300px;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 3.5rem;
+    right: 0;
+    transition: 500ms;
+    z-index: 2;
+  }
+}
