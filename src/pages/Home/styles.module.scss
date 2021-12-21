@@ -90,27 +90,25 @@
 @media (max-width: 800px) {
   .homeContent {
     grid-template-columns: 1fr 1fr;
+    .shoppingListMenuActive {
+      width: 100%;
+      height: 95%;
+      .shoppingListMenuItensHeader {
+        width: 400px;
+      }
+    }
   }
 }
 
 @media (max-width: 600px) {
   .homeContent {
-    // display: flex;
-    // flex-direction: column;
     grid-template-columns: 1fr;
   }
 
   .shoppingListMenuActive {
-    background: #f1f1f1;
-    border-left: 1px solid #fff;
     width: 300px;
-    height: 95%;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: 3.5rem;
-    right: 0;
-    transition: 500ms;
-    z-index: 2;
+    .shoppingListMenuItensHeader {
+      width: 300px;
+    }
   }
 }
