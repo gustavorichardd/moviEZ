@@ -4,19 +4,23 @@ import {
   Routes
 } from "react-router-dom";
 
+import { CheckoutProvider } from './contexts/CheckoutContext'
+
 import { Home } from './pages/Home'
 import { Checkout } from './pages/Checkout';
 
 export function Router() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
+    <CheckoutProvider >
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-        <Route path="/checkout" element={<Checkout />} />
+          <Route path="/checkout" element={<Checkout />} />
 
-        <Route path="*" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </CheckoutProvider>
   )
 };

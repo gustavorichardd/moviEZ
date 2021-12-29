@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Header } from '../../components/Header';
 import { MovieCard } from '../../components/MovieCard';
 import styles from './styles.module.scss';
 import { Link } from 'react-router-dom';
 import { api } from '../../service/api';
 import { CheckoutListItem } from '../../components/CheckoutListItem';
+import { CheckoutContext } from '../../contexts/CheckoutContext'
 
 const ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNWI4NjcyZmVlZWE3MmE3YjNiZjQ4YmQyMzU5OTE2MiIsInN1YiI6IjYxYzA4MWIzYTg0ZmY3MDA2OGY4ZTkwMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Phro2w60K9mzcVpTx5JWZsLQ-9eWdxqL_l1SpknArto'
 
@@ -16,6 +17,8 @@ export function Home() {
   const [totalOnCheckout, setTotalOnCheckout] = useState(0)
   const [totalItensOnCart, setTotalItensOnCart] = useState(0)
   const [movieName, setMovieName] = useState('')
+
+  const { checkoutList, setCheckoutList } = useContext(CheckoutContext)
 
   async function getPopularMovies() {
     const { data } = await api.get('/movie/popular', {
@@ -116,6 +119,10 @@ export function Home() {
 
   }
 
+  function handleToCheckout() {
+    setCheckoutList(moviesOnCheckout)
+  }
+
   return (
     <div className={styles.homeContainer}>
       <Header
@@ -152,7 +159,10 @@ export function Home() {
 
               </div>
               <Link to='/checkout'>
-                <button className={styles.moveToCheckout}>
+                <button
+                  className={styles.moveToCheckout}
+                  onClick={handleToCheckout}
+                >
                   Finalizar Compra
                 </button>
               </Link>

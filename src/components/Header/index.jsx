@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { RiShoppingCartLine, RiHeartFill, RiSearchLine, RiMenuFill } from 'react-icons/ri'
+import { RiShoppingCartLine, RiHeartFill, RiSearchLine } from 'react-icons/ri'
+import { Link } from 'react-router-dom';
 
-import logo from '../../assets/ezlogo2.png'
+import logo from '../../assets/ezlogo.png'
 
 import styles from './styles.module.scss';
 
@@ -10,7 +10,7 @@ export function Header({ openMenuShop, itensOnCart, searchMovie, value, setProps
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
-        <img src={logo} alt="moviEZ logo" />
+        <Link to="/"><img src={logo} alt="moviEZ logo" /></Link>
 
         <div className={styles.searchInput}>
           <input

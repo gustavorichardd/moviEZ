@@ -1,6 +1,18 @@
+import { useEffect, useContext } from 'react';
+import { CheckoutContext } from '../../contexts/CheckoutContext'
+import { CheckoutListItem } from '../../components/CheckoutListItem';
+
 import styles from './styles.module.scss';
 
 export function Checkout() {
+
+  const { checkoutList, setCheckoutList } = useContext(CheckoutContext)
+
+  useEffect(() => {
+
+  }, [])
+
+
   return (
     <div className={styles.checkoutContainer}>
       <div className={styles.userProfile}>
@@ -33,18 +45,9 @@ export function Checkout() {
             <th>Qtd</th>
             <th>Preço</th>
           </tr>
-          <tr>
-            <td>ITEM 1</td>
-            <td>ITEM 1</td>
-            <td>ITEM 1</td>
-            <td>ITEM 1</td>
-          </tr>
-          <tr>
-            <td>ITEM 1</td>
-            <td>ITEM 1</td>
-            <td>ITEM 1</td>
-            <td>ITEM 1</td>
-          </tr>
+          {checkoutList.map((movie, index) => {
+            return <CheckoutListItem removeFromCart={() => handleRemoveItemFromShopList(movie)} movie={movie} key={index} />
+          })}
         </table>
       </div>
     </div>
